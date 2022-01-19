@@ -1,0 +1,13 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: letsencrypt-crt
+  namespace: cert-manager
+spec:
+  secretName: acme-tls
+  issuerRef:
+    name: letsencrypt
+  commonName: example.com
+  dnsNames:
+  - www.example.com
+  - example.com
